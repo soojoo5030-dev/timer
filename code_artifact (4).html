@@ -1,0 +1,666 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <title>교직원 동아리 심화 바이브 코딩 워크숍</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700;900&amp;display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { margin: 0; padding: 0; font-family: 'Pretendard', sans-serif; background: #0f172a; color: #f8fafc; }
+    
+    .slide-container {
+      width: 1280px; height: 720px; margin: 0 auto; overflow: hidden; box-sizing: border-box; position: relative; padding: 64px 80px; display: flex;
+    }
+
+    /* Color Palette - Advanced Tech Vibe */
+    .bg-dark { background: #0f172a; color: #f8fafc; }
+    .bg-light { background: #ffffff; color: #1e293b; }
+    .bg-gray { background: #f1f5f9; color: #1e293b; }
+    
+    .text-primary { color: #6366f1; } /* Indigo */
+    .text-accent { color: #10b981; } /* Emerald */
+    .text-orange { color: #f59e0b; }
+    .text-red { color: #ef4444; }
+    .text-muted { color: #64748b; }
+    .text-white { color: #ffffff; }
+
+    /* Typography */
+    .title-xl { font-size: 72px; font-weight: 900; line-height: 1.2; letter-spacing: -0.02em; }
+    .title-lg { font-size: 56px; font-weight: 800; line-height: 1.3; letter-spacing: -0.01em; margin-bottom: 24px; }
+    .title-md { font-size: 40px; font-weight: 700; line-height: 1.4; margin-bottom: 16px; }
+    .eyebrow { font-size: 20px; font-weight: 700; color: #6366f1; text-transform: uppercase; margin-bottom: 16px; letter-spacing: 0.05em; }
+    .body-lg { font-size: 28px; line-height: 1.6; }
+    
+    /* Layout */
+    .flex-col { flex-direction: column; }
+    .flex-row { flex-direction: row; display: flex; gap: 40px; width: 100%; }
+    .flex-1 { flex: 1 1 0; }
+    .center-all { justify-content: center; align-items: center; text-align: center; }
+    .v-center { justify-content: center; display: flex; flex-direction: column; }
+    
+    .divider { width: 64px; height: 6px; background: #6366f1; margin: 32px 0; border-radius: 3px; }
+    
+    .card { background: #ffffff; border-radius: 24px; padding: 40px; display: flex; flex-direction: column; border: 1px solid #e2e8f0; color: #1e293b; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+    .card-dark { background: #1e293b; border-color: #334155; color: #f8fafc; }
+    .card-title { font-size: 32px; font-weight: 800; margin-bottom: 16px; }
+    .card-body { font-size: 24px; line-height: 1.5; color: #475569; }
+    .card-dark .card-body { color: #cbd5e1; }
+    
+    .clean-list { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+    .clean-list li { font-size: 28px; display: flex; align-items: flex-start; gap: 16px; line-height: 1.5; }
+    .clean-list li::before { content: '•'; color: #6366f1; font-weight: bold; }
+
+    .image-box { width: 100%; height: 100%; border-radius: 24px; overflow: hidden; }
+    .image-box img { width: 100%; height: 100%; object-fit: cover; }
+    .split-50 { flex: 1; }
+  </style>
+<style>.lms-source-label {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #e0e0e0;
+    color: #333;
+    border-radius: 10px;
+    padding: 4px 4px;
+    font-family: sans-serif;
+    font-size: 10px;
+    pointer-events: none;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+</style><style>.slide-container.slide-attributions .attribution-safe-zone {
+  width: 100%;
+  height: 100%;
+  padding: 60px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  overflow: hidden;
+}
+.slide-container.slide-attributions .attribution-safe-zone .slide-title {
+  text-align: left;
+}
+.slide-container.slide-attributions .attribution-safe-zone .content-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  width: 100%;
+}
+.slide-container.slide-attributions .attribution-safe-zone .attribution-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+.slide-container.slide-attributions .attribution-safe-zone .attribution-list__item {
+  align-items: center;
+  border-bottom: 1px solid #757575;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 90px 1fr;
+  padding: 15px 0;
+  margin: 0;
+  text-align: left;
+}
+.slide-container.slide-attributions .attribution-safe-zone .attribution-list__item::before {
+  display: none;
+}
+.slide-container.slide-attributions .attribution-safe-zone .attribution-list__item::after {
+  display: none;
+}
+.slide-container.slide-attributions .attribution-safe-zone .attribution-list__item:last-child {
+  border-bottom: none;
+}
+.slide-container.slide-attributions .attribution-safe-zone .attribution-list__item .attribution__thumbnail {
+  height: 50px;
+  width: 90px;
+}
+.slide-container.slide-attributions .attribution-safe-zone .attribution__thumbnail .attribution__thumbnail__image {
+  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.slide-container.slide-attributions .attribution-safe-zone .attribution__details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+  text-align: left;
+}
+.slide-container.slide-attributions .attribution-safe-zone .attribution__details .attribution__raw-url {
+  color: inherit;
+  font-size: 13px;
+  margin: 0;
+  word-break: break-all;
+  text-align: left;
+}
+.slide-container.slide-attributions .attribution-safe-zone .attribution__details .attribution__title {
+  color: inherit;
+  font-size: 16px;
+  margin: 0;
+  text-align: left;
+}
+.slide-container.slide-attributions .attribution-safe-zone .attribution__details .attribution__title > .attribution__link {
+  color: #4f46e5;
+  text-decoration: none;
+}
+</style><style>/* The container that fills available space and centers the slide. */
+#slideshow-holder {
+    flex-grow: 1;
+    width: 100%;
+    padding: 0.25rem 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* UI controls should not be text-selectable. */
+#nav-controls.select-none,
+#theme-toggle.select-none {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* The slide canvas, scaled via CSS zoom to fit available space. */
+#slideshow-wrapper {
+    width: 1280px;
+    height: 720px;
+    position: relative;
+    flex-shrink: 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    overflow: hidden;
+}
+
+/* Update slide container styles */
+.slide-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Make the active slide visible */
+.slide-container.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+</style><script src="https://cdn.tailwindcss.com/3.4.17"></script><script>tailwind.config = {
+  darkMode: 'class',
+  corePlugins: {
+    preflight: false,
+  },
+};
+</script></head>
+<body class="bg-white dark:bg-[#1f1f1f] flex flex-col h-screen transition-colors duration-300 gap-3">
+
+  <!-- Slide 1: Title -->
+  
+
+  <!-- Slide 2: The Limitation -->
+  
+
+  <!-- Slide 3: Paradigm Shift -->
+  
+
+  <!-- Slide 4: Web App Definition -->
+  
+
+  <!-- Slide 5: Vibe Coding -->
+  
+
+  <!-- Slide 6: Teacher's Role -->
+  
+
+  <!-- Slide 7: API Concept -->
+  
+
+  <!-- Slide 8: API Analogy -->
+  
+
+  <!-- Slide 9: Big Question - OpenAI vs Google -->
+  
+
+  <!-- Slide 10: Why OpenAI -->
+  
+
+  <!-- Slide 11: Workshop Goal -->
+  
+
+  <!-- Slide 12: Persona Concept -->
+  
+
+  <!-- Slide 13: Persona Examples -->
+  
+
+  <!-- Slide 14: Prompt Injection -->
+  
+
+  <!-- Slide 15: Vibe Tuning -->
+  
+
+  <!-- Slide 16: API Key Injection -->
+  
+
+  <!-- Slide 17: Hosting Intro -->
+  
+
+  <!-- Slide 18: Why Hosting -->
+  
+
+  <!-- Slide 19: Tiiny.host -->
+  
+
+  <!-- Slide 20: Tiiny.host Warning -->
+  
+
+  <!-- Slide 21: Security Debt -->
+  
+
+  <!-- Slide 22: Client-side API Risk -->
+  
+
+  <!-- Slide 23: Closing -->
+  
+
+
+<button id="theme-toggle" class="select-none absolute top-4 right-4 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-2 rounded-full shadow-md text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 z-20 border-none leading-[0] cursor-pointer">
+    <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+    <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 -960 960 960"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"></path></svg>
+</button>
+
+<div id="nav-controls" class="select-none relative flex-shrink-0 w-full flex justify-center items-center py-2 px-4">
+    <span id="slide-counter" class="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-medium text-gray-600 dark:text-gray-400 font-sans"></span>
+    <div class="flex items-center space-x-2">
+        <button id="prev-slide" class="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 p-2 rounded-md transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md border-none leading-[0] cursor-pointer">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <button id="next-slide" class="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 p-2 rounded-md transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md border-none leading-[0] cursor-pointer">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+    </div>
+</div>
+
+<div id="slideshow-holder"><div id="slideshow-wrapper"><div class="slide-container bg-dark center-all flex-col" id="slide1">
+    <p class="eyebrow" style="color: #a5b4fc;" contenteditable="true">중등 교직원 에듀테크 심화 워크숍</p>
+    <h1 class="title-xl" contenteditable="true">바이브 코딩으로 만드는<br>교과 맞춤형 AI 챗봇</h1>
+    <div style="width: 80px; height: 4px; background: #6366f1; margin: 40px 0;"></div>
+    <p class="body-lg" style="color: #94a3b8;" contenteditable="true">AI 사용자를 넘어, 시스템 설계자로 도약하기</p>
+  </div><div class="slide-container bg-gray flex-row" id="slide2" style="align-items: center;">
+    <div class="split-50 v-center">
+      <p class="eyebrow" contenteditable="true">기성 AI의 한계</p>
+      <h2 class="title-lg" contenteditable="true">&#34;ChatGPT가 써준 글,<br>학생들도 다 알아봅니다.&#34;</h2>
+      <p class="body-lg text-muted" contenteditable="true">모두가 똑같은 웹사이트에 접속해<br>천편일률적인 정답만 얻어가는 수동적인 환경.</p>
+    </div>
+    <div class="split-50 image-box">
+      <img src="https://images.stockcake.com/public/4/f/c/4fcfe690-0cf4-47e2-aa25-0643c8d5c4a2_large/digital-ai-ascension-stockcake.jpg" alt="AI Interface">
+    </div>
+  </div><div class="slide-container bg-dark center-all flex-col" id="slide3">
+    <i class="fa-solid fa-code-branch text-accent" style="font-size: 80px; margin-bottom: 32px;"></i>
+    <h2 class="title-lg" contenteditable="true">패러다임의 전환</h2>
+    <p class="body-lg" contenteditable="true" style="margin-top: 16px;">AI와 대화하는 것을 넘어,<br><b>AI를 소프트웨어에 이식(Orchestration)</b>하는 시대로.</p>
+  </div><div class="slide-container bg-light v-center" id="slide4">
+    <p class="eyebrow" contenteditable="true">핵심 개념 01</p>
+    <h2 class="title-lg" contenteditable="true">우리가 만들 &#39;웹앱(Web App)&#39;</h2>
+    <div class="divider"></div>
+    <p class="body-lg text-muted" contenteditable="true" style="max-width: 900px;">
+      앱스토어 심사나 설치 과정 없이,<br>인터넷 링크(QR코드) 클릭 한 번으로 모든 기기에서 실행되는 소프트웨어.
+    </p>
+  </div><div class="slide-container bg-gray flex-row" id="slide5" style="align-items: center;">
+    <div class="split-50 image-box">
+      <img src="https://image.shutterstock.com/image-vector/internal-communications-connection-icon-set-260nw-2657509175.jpg" alt="Coding">
+    </div>
+    <div class="split-50 v-center" style="padding-left: 40px;">
+      <p class="eyebrow" contenteditable="true">핵심 개념 02</p>
+      <h2 class="title-lg" contenteditable="true">바이브 코딩<br>(Vibe Coding)</h2>
+      <p class="body-lg text-muted" contenteditable="true">개발 문법을 외우는 대신,<br>자연어로 AI에게 시스템의 목적과 분위기(Vibe)를 지시하여 코드를 생성하는 방식.</p>
+    </div>
+  </div><div class="slide-container bg-light center-all flex-col" id="slide6">
+    <h2 class="title-lg" contenteditable="true">교사의 새로운 역할</h2>
+    <div class="flex-row" style="margin-top: 40px; justify-content: center; align-items: center; width: auto; gap: 64px;">
+      <div class="v-center" style="text-align: center;">
+        <i class="fa-solid fa-keyboard text-muted" style="font-size: 64px; margin-bottom: 16px;"></i>
+        <h3 class="title-md text-muted" contenteditable="true">코더 (타이피스트)</h3>
+      </div>
+      <i class="fa-solid fa-arrow-right text-primary" style="font-size: 48px;"></i>
+      <div class="v-center" style="text-align: center;">
+        <i class="fa-solid fa-sitemap text-primary" style="font-size: 64px; margin-bottom: 16px;"></i>
+        <h3 class="title-md text-primary" contenteditable="true">시스템 아키텍트 (설계자)</h3>
+      </div>
+    </div>
+    <p class="body-lg text-muted" contenteditable="true" style="margin-top: 48px;">코드는 AI가 짭니다. 선생님은 교육적 목적 설계에 집중하세요.</p>
+  </div><div class="slide-container bg-dark v-center" id="slide7">
+    <p class="eyebrow" contenteditable="true">핵심 개념 03</p>
+    <h2 class="title-lg" contenteditable="true">API 란 무엇인가?</h2>
+    <div class="divider" style="background: #10b981;"></div>
+    <ul class="clean-list" style="color: #e2e8f0;">
+      <li contenteditable="true">Application Programming Interface</li>
+      <li contenteditable="true">소프트웨어들이 서로 대화하는 <b>연결 통로</b></li>
+      <li contenteditable="true">우리가 만든 웹앱 화면(껍데기)과 초거대 AI(뇌)를 연결하는 다리 역할.</li>
+    </ul>
+  </div><div class="slide-container bg-gray center-all flex-col" id="slide8">
+    <p class="eyebrow" contenteditable="true">비유하자면</p>
+    <h2 class="title-lg" contenteditable="true">API는 식당의 &#39;종업원&#39; 입니다.</h2>
+    <div class="flex-row" style="margin-top: 40px; justify-content: center; align-items: center; width: auto; gap: 40px;">
+      <div class="card flex-1 center-all" style="padding: 24px;">
+        <h3 class="card-title text-primary" contenteditable="true">우리 학교 앱</h3>
+        <p class="card-body" contenteditable="true">손님 (주문자)</p>
+      </div>
+      <i class="fa-solid fa-arrows-left-right text-muted" style="font-size: 40px;"></i>
+      <div class="card bg-dark flex-1 center-all" style="padding: 24px; border:none;">
+        <h3 class="card-title text-accent" contenteditable="true">API</h3>
+        <p class="card-body text-white" contenteditable="true">종업원 (전달자)</p>
+      </div>
+      <i class="fa-solid fa-arrows-left-right text-muted" style="font-size: 40px;"></i>
+      <div class="card flex-1 center-all" style="padding: 24px;">
+        <h3 class="card-title text-primary" contenteditable="true">OpenAI 서버</h3>
+        <p class="card-body" contenteditable="true">천재 요리사</p>
+      </div>
+    </div>
+  </div><div class="slide-container bg-light center-all flex-col" id="slide9">
+    <i class="fa-solid fa-circle-question text-orange" style="font-size: 80px; margin-bottom: 32px;"></i>
+    <h2 class="title-lg" contenteditable="true">잠깐, 구글(Gemini)은 완전 무료인데<br>왜 굳이 OpenAI API를 쓸까요?</h2>
+  </div><div class="slide-container bg-gray v-center" id="slide10">
+    <h2 class="title-lg" contenteditable="true">OpenAI API를 쓰는 3가지 이유</h2>
+    <div class="divider"></div>
+    <div class="flex-row">
+      <div class="card flex-1">
+        <h3 class="card-title text-primary" contenteditable="true">1. 압도적 표준화</h3>
+        <p class="card-body" contenteditable="true">AI 코딩 도구들이 OpenAI 문법을 너무 잘 알아서 <b>에러 없는 완벽한 코드</b>를 단번에 짜냅니다.</p>
+      </div>
+      <div class="card flex-1">
+        <h3 class="card-title text-primary" contenteditable="true">2. 직관적인 코드</h3>
+        <p class="card-body" contenteditable="true">단일 HTML 파일 안에서 가장 깔끔하고 짧게 통신 로직이 구현됩니다.</p>
+      </div>
+      <div class="card flex-1">
+        <h3 class="card-title text-primary" contenteditable="true">3. 방대한 자료</h3>
+        <p class="card-body" contenteditable="true">오류가 나도 인터넷에 해결책과 레퍼런스가 가장 많습니다.</p>
+      </div>
+    </div>
+  </div><div class="slide-container bg-dark center-all flex-col" id="slide11">
+    <h2 class="title-xl text-accent" contenteditable="true">오늘의 미션</h2>
+    <p class="body-lg text-white" contenteditable="true" style="margin-top: 24px;">OpenAI API를 연동하여<br>우리 반/교과에 딱 맞는 <b>맞춤형 AI 챗봇</b> 만들기</p>
+  </div><div class="slide-container bg-light v-center" id="slide12">
+    <p class="eyebrow" contenteditable="true">Step 1. 기획</p>
+    <h2 class="title-lg" contenteditable="true">챗봇의 영혼,<br>시스템 프롬프트 (System Prompt)</h2>
+    <div class="divider"></div>
+    <p class="body-lg text-muted" contenteditable="true" style="max-width: 900px;">
+      AI에게 부여하는 <b>&#39;절대 규칙&#39;</b>이자 <b>&#39;자아(Persona)&#39;</b>.<br>사용자에게는 보이지 않지만, AI의 모든 답변 스타일과 성격을 지배합니다.
+    </p>
+  </div><div class="slide-container bg-gray v-center" id="slide13">
+    <h2 class="title-lg" contenteditable="true">교과별 페르소나 설계 예시</h2>
+    <div class="divider"></div>
+    <div class="flex-row">
+      <div class="card flex-1">
+        <h3 class="card-title" contenteditable="true">📜 국어과</h3>
+        <p class="card-body" contenteditable="true"><b>윤동주 시인 챗봇:</b><br>무조건 시적인 은유로만 대답하고, 시대를 고뇌하는 말투 사용.</p>
+      </div>
+      <div class="card flex-1">
+        <h3 class="card-title" contenteditable="true">📐 수학과</h3>
+        <p class="card-body" contenteditable="true"><b>소크라테스 튜터:</b><br>학생이 정답을 물어보면 화를 내고, 질문을 통해 스스로 풀도록 유도함.</p>
+      </div>
+      <div class="card flex-1">
+        <h3 class="card-title" contenteditable="true">💡 진로/상담</h3>
+        <p class="card-body" contenteditable="true"><b>공감 요정:</b><br>무조건 학생의 말에 3문장 이상 깊이 공감해 준 뒤에 조언을 시작함.</p>
+      </div>
+    </div>
+  </div><div class="slide-container bg-dark v-center" id="slide14">
+    <p class="eyebrow" contenteditable="true">Step 2. 바이브 코딩</p>
+    <h2 class="title-lg text-white" contenteditable="true">마법의 프롬프트 복사하기</h2>
+    <div class="card card-dark" style="margin-top: 24px;">
+      <p class="card-body" contenteditable="true" style="font-family: monospace; font-size: 20px; line-height: 1.6;">
+        [역할] 당신은 뛰어난 프론트엔드 개발자입니다. 단일 HTML 파일로 <b>&#39;맞춤형 AI 챗봇 웹앱&#39;</b>을 만들어주세요.<br><br>
+        [기능] 1. 모바일 최적화 채팅창 UI<br>
+        2. OpenAI API 연동 (fetch 함수, gpt-4o-mini 모델)<br>
+        3. <b>const API_KEY = &#34;여기에_키_입력&#34;;</b> 변수를 최상단에 배치<br>
+        4. <b>const SYSTEM_PROMPT = &#34;성격&#34;;</b> 변수를 시스템 프롬프트로 전송
+      </p>
+    </div>
+  </div><div class="slide-container bg-light center-all flex-col" id="slide15">
+    <p class="eyebrow" contenteditable="true">Step 3. 디자인 튜닝</p>
+    <i class="fa-solid fa-paintbrush text-primary" style="font-size: 64px; margin-bottom: 32px;"></i>
+    <h2 class="title-lg" contenteditable="true">&#34;말풍선을 카카오톡처럼<br>동글동글하고 노란색으로 바꿔줘.&#34;</h2>
+    <p class="body-lg text-muted" contenteditable="true" style="margin-top: 16px;">자연어로 원하는 UI/UX를 끊임없이 요구하세요.</p>
+  </div><div class="slide-container bg-gray center-all flex-col" id="slide16">
+    <p class="eyebrow text-red" contenteditable="true">Step 4. 생명 불어넣기</p>
+    <i class="fa-solid fa-key text-red" style="font-size: 80px; margin-bottom: 32px;"></i>
+    <h2 class="title-lg" contenteditable="true">화면의 임시 API 키를<br>코드 최상단에 붙여넣으세요.</h2>
+    <p class="body-lg text-muted" contenteditable="true" style="margin-top: 24px;">이제 껍데기가 지능을 갖게 됩니다.</p>
+  </div><div class="slide-container bg-dark center-all flex-col" id="slide17">
+    <h2 class="title-xl text-white" contenteditable="true">완성된 챗봇 배포하기</h2>
+    <p class="body-lg" style="color: #cbd5e1; margin-top: 24px;" contenteditable="true">내가 만든 챗봇을 학생들과 동료 교사에게 공유하는 법</p>
+  </div><div class="slide-container bg-light center-all flex-col" id="slide18">
+    <p class="eyebrow" contenteditable="true">호스팅(Hosting)의 필요성</p>
+    <h2 class="title-lg" contenteditable="true">&#34;컴퓨터에 있는 HTML 파일을<br>어떻게 스마트폰에서 켜나요?&#34;</h2>
+    <p class="body-lg text-muted" contenteditable="true" style="margin-top: 24px;">인터넷 주소(URL)와 QR코드를 만들어야 합니다.</p>
+  </div><div class="slide-container bg-gray center-all flex-col" id="slide19">
+    <i class="fa-solid fa-file-arrow-up text-primary" style="font-size: 80px; margin-bottom: 32px;"></i>
+    <h2 class="title-xl" contenteditable="true">10초 배포 마법: Tiiny.host</h2>
+    <p class="body-lg text-muted" contenteditable="true" style="margin-top: 24px;">HTML 파일을 화면에 드래그 앤 드롭하면 즉시 QR코드 생성.</p>
+  </div><div class="slide-container bg-light v-center" id="slide20">
+    <p class="eyebrow text-red" contenteditable="true">주의사항 (다크 패턴)</p>
+    <h2 class="title-lg" contenteditable="true">결제 유도창에 당황하지 마세요.</h2>
+    <div class="divider" style="background: #ef4444;"></div>
+    <ul class="clean-list">
+      <li contenteditable="true">파일을 올릴 때 <b>&#39;Start free trial&#39;</b>이라는 파란 버튼이 뜹니다.</li>
+      <li contenteditable="true">이 버튼을 <b>절대 누르지 마세요.</b> (유료 요금제 유도)</li>
+      <li contenteditable="true">아래에 숨어있는 <b>&#39;Skip&#39;</b> 글자나 우측 상단의 <b>&#39;X&#39;</b>를 누르면 평생 무료입니다.</li>
+    </ul>
+  </div><div class="slide-container bg-dark center-all flex-col" id="slide21">
+    <i class="fa-solid fa-triangle-exclamation text-red" style="font-size: 80px; margin-bottom: 32px;"></i>
+    <h2 class="title-xl text-red" contenteditable="true">보안 부채 (Security Debt)</h2>
+    <p class="body-lg" style="color: #cbd5e1; margin-top: 24px;" contenteditable="true">가장 중요한 보안 이야기</p>
+  </div><div class="slide-container bg-light v-center" id="slide22">
+    <h2 class="title-lg" contenteditable="true">HTML에 API 키를 넣으면 생기는 일</h2>
+    <div class="divider" style="background: #ef4444;"></div>
+    <p class="body-lg text-muted" contenteditable="true" style="margin-bottom: 32px;">
+      우리가 만든 방식(Client-side)은 브라우저에서 &#39;F12(개발자 도구)&#39;를 누르면 <b>누구나 API 키를 훔쳐볼 수 있습니다.</b>
+    </p>
+    <div class="card" style="background: #fee2e2; border-color: #fca5a5;">
+      <p class="card-body text-red" contenteditable="true"><b>강력 권고:</b><br>오늘 드린 실습용 API 키는 연수 직후 <b>즉시 폐기</b>됩니다.<br>실제 학교 서비스로 도입하려면 백엔드(서버)를 거치도록 구축해야 합니다.</p>
+    </div>
+  </div><div class="slide-container bg-dark center-all flex-col" id="slide23">
+    <h2 class="title-xl text-accent" contenteditable="true">선생님의 철학이<br>가장 훌륭한 시스템입니다.</h2>
+    <p class="body-lg" style="color: #94a3b8; margin-top: 48px;" contenteditable="true">Q&amp;A 및 마무리</p>
+  </div><div class="slide-container slide-attributions" id="slide-attributions-1"><div class="attribution-safe-zone"><h2 class="slide-title">Image Sources</h2><div class="content-area"><ul class="attribution-list"><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlPq4IYcUdFjzkz37YcELg_EHphN4X-FgHtxK5iazgTNV84f114livB34gi63W" alt="Thumbnail for stockcake.com"></div><div class="attribution__details"><p class="attribution__raw-url">https://images.stockcake.com/public/4/f/c/4fcfe690-0cf4-47e2-aa25-0643c8d5c4a2_large/digital-ai-ascension-stockcake.jpg</p><p class="attribution__title">Source: <a href="https://stockcake.com/i/digital-ai-ascension_3882579_1661093" target="_blank" class="attribution__link">stockcake.com</a></p></div></li><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQMR6X4vtRk-s9FqIHInenG6JcqJGb7SLzWBzJk9ptCFVpjXL-plkVcT6f7Rlq8" alt="Thumbnail for www.freevector.com"></div><div class="attribution__details"><p class="attribution__raw-url">https://image.shutterstock.com/image-vector/internal-communications-connection-icon-set-260nw-2657509175.jpg</p><p class="attribution__title">Source: <a href="https://www.freevector.com/communication-icons" target="_blank" class="attribution__link">www.freevector.com</a></p></div></li></ul></div></div></div></div></div><script>/**
+ * Fetches an image blob using a method that attempts to bypass CORS issues
+ * by adding 'alr=yes' to the URL and following redirects.
+ * @param {string} urlString
+ * @return {!Promise<!Blob>}
+ */
+async function fetchFifeImageBlobUsingAlr(urlString) {
+  if (urlString.startsWith('blob:') || urlString.startsWith('data:')) {
+    throw new Error('Input URL is already a blob or data URL.');
+  }
+  let url = new URL(urlString, window.location.href);
+  url.searchParams.set('alr', 'yes');
+  for (let i = 0; i < 5; i++) {
+    const response = await fetch(url.toString(), {credentials: 'include'});
+    if (!response.ok) {
+      throw new Error(`Fetch received not OK response: ${response.status}`);
+    }
+    if (!response.headers.get('content-type')?.startsWith('text/plain')) {
+      const blob = await response.blob();
+      if (blob.size > 0 && blob.type.startsWith('image/')) {
+        return blob;
+      }
+      throw new Error('Fetched blob is not a valid image.');
+    }
+    url = new URL(await response.text());
+  }
+  throw new Error('Exceeded maximum number of redirects.');
+}
+
+/**
+ * Updates image sources using ALR.
+ * @return {!Promise<void>}
+ */
+async function updateImageSourcesUsingAlr() {
+  // Use Promise.all to handle all updates concurrently for better performance.
+  await Promise.all(
+      Array.from(document.querySelectorAll('img'), async (img) => {
+        // Only proceed if the img tag has a valid 'src' attribute with a
+        // googleusercontent URL.
+        if (img.src && img.src.includes('googleusercontent')) {
+          try {
+            const blob = await fetchFifeImageBlobUsingAlr(img.src);
+            // Create a new URL from the Blob and set it as the image's source.
+            img.src = URL.createObjectURL(blob);
+          } catch (error) {
+            // Do nothing.
+          }
+        }
+      }));
+}
+
+/**
+ * Updates background images using ALR.
+ * @return {!Promise<void>}
+ */
+async function updateBackgroundImagesUsingAlr() {
+  // Find all elements with a googleusercontent background image.
+  const elementsToProcess =
+      document.querySelectorAll('[style*="googleusercontent"]');
+  const urlRegex = /url\((['"]?)(https?:\/\/.*?googleusercontent.*?)\1\)/;
+
+  await Promise.all(Array.from(elementsToProcess, async (element) => {
+    const backgroundImage = element.style.backgroundImage;
+    const match = backgroundImage.match(urlRegex);
+
+    if (match && match[2]) {
+      const originalUrl = match[2];
+      try {
+        const blob = await fetchFifeImageBlobUsingAlr(originalUrl);
+        const blobUrl = URL.createObjectURL(blob);
+
+        // Directly update the element's style property.
+        element.style.backgroundImage =
+            backgroundImage.replace(originalUrl, blobUrl);
+      } catch (error) {
+        // Do nothing.
+      }
+    }
+  }));
+}
+
+// --- SLIDESHOW LOGIC ---
+/**
+ * Initializes the slideshow UI logic.
+ */
+function initializeSlideshowUi() {
+  const slides = document.querySelectorAll('.slide-container');
+  const prevButton = document.getElementById('prev-slide');
+  const nextButton = document.getElementById('next-slide');
+  const slideCounter = document.getElementById('slide-counter');
+  let currentSlide = 0;
+
+  function updateUi() {
+    slides.forEach((slide, index) => {
+      slide.classList.toggle('active', index === currentSlide);
+    });
+    prevButton.disabled = currentSlide === 0;
+    nextButton.disabled = currentSlide === slides.length - 1;
+    slideCounter.textContent = slideCounter.dataset.format === 'compact'
+        ? `${currentSlide + 1} of ${slides.length}`
+        : `Slide ${currentSlide + 1} of ${slides.length}`;
+  }
+
+  function showNextSlide() {
+    if (currentSlide < slides.length - 1) {
+      currentSlide++;
+      updateUi();
+    }
+  }
+
+  function showPrevSlide() {
+    if (currentSlide > 0) {
+      currentSlide--;
+      updateUi();
+    }
+  }
+
+  nextButton.addEventListener('click', showNextSlide);
+  prevButton.addEventListener('click', showPrevSlide);
+  document.addEventListener('keydown', (e) => {
+    // Don't intercept arrow keys when the user is editing text.
+    const el = e.target;
+    if (el.isContentEditable || el.tagName === 'INPUT' ||
+        el.tagName === 'TEXTAREA') {
+      return;
+    }
+    if (e.key === 'ArrowRight') {
+      showNextSlide();
+    } else if (e.key === 'ArrowLeft') {
+      showPrevSlide();
+    }
+  });
+
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const darkIcon = document.getElementById('theme-toggle-dark-icon');
+  const lightIcon = document.getElementById('theme-toggle-light-icon');
+  const htmlEl = document.documentElement;
+
+  function setTheme(isDark) {
+    htmlEl.classList.toggle('dark', isDark);
+    darkIcon.classList.toggle('hidden', isDark);
+    lightIcon.classList.toggle('hidden', !isDark);
+    localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
+  }
+  const isDarkMode = localStorage.getItem('color-theme') === 'dark' ||
+      (!('color-theme' in localStorage) &&
+       window.matchMedia('(prefers-color-scheme: dark)').matches);
+  setTheme(isDarkMode);
+  themeToggleBtn.addEventListener(
+      'click', () => setTheme(!htmlEl.classList.contains('dark')));
+
+  function updateScale() {
+    const baseWidth = 1280;
+    const baseHeight = 720;
+    const slideshowWrapper = document.getElementById('slideshow-wrapper');
+    const slideshowHolder = document.getElementById('slideshow-holder');
+
+    // Subtract padding to get the actual content area dimensions.
+    const holderStyle = getComputedStyle(slideshowHolder);
+    const paddingX = parseFloat(holderStyle.paddingLeft) +
+        parseFloat(holderStyle.paddingRight);
+    const paddingY = parseFloat(holderStyle.paddingTop) +
+        parseFloat(holderStyle.paddingBottom);
+    const availableWidth = slideshowHolder.clientWidth - paddingX;
+    const availableHeight = slideshowHolder.clientHeight - paddingY;
+
+    // Calculate the scale ratio based on both width and height.
+    const scaleX = availableWidth / baseWidth;
+    const scaleY = availableHeight / baseHeight;
+
+    // Use the smaller of the two ratios to ensure it fits.
+    const finalScale = Math.min(scaleX, scaleY);
+
+    // CSS zoom scales both visual appearance and layout box size,
+    // unlike transform:scale() which only affects visual rendering.
+    slideshowWrapper.style.zoom = finalScale;
+  }
+
+  updateUi();
+  updateScale();
+  window.addEventListener('resize', updateScale);
+}
+
+document.addEventListener('DOMContentLoaded', async function() {
+  await Promise.all(
+      [updateImageSourcesUsingAlr(), updateBackgroundImagesUsingAlr()]);
+  initializeSlideshowUi();
+});
+</script></body></html>
